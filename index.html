@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloomora Design</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles for the butterfly animation */
+        .butterfly {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: url('https://png.pngtree.com/png-vector/20191201/ourmid/pngtree-butterfly-vector-logo-design-png-image_2066840.jpg'); /* Add your butterfly image here */
+            background-size: cover;
+            animation: fly 10s infinite;
+        }
+
+        @keyframes fly {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(100px, -50px); }
+            50% { transform: translate(200px, 100px); }
+            75% { transform: translate(300px, -100px); }
+            100% { transform: translate(400px, 50px); }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans leading-relaxed">
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-green-400 to-blue-500 text-white h-screen flex items-center justify-center">
+        <div class="text-center">
+            <h1 class="text-5xl font-bold mb-4">Transforming Ideas into Beautiful Experiences</h1>
+            <p class="text-xl mb-8">We design and develop products that make a difference.</p>
+            <a href="#services" class="bg-white text-blue-500 px-6 py-3 rounded-full shadow-lg hover:bg-blue-500 hover:text-white transition">Explore Our Work</a>
+        </div>
+        <div class="butterfly"></div>
+    </section>
+
+    <!-- Storytelling Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Our Journey</h2>
+            <div class="timeline relative">
+                <div class="mb-8 flex items-center justify-between">
+                    <div class="w-1/2">
+                        <h3 class="text-2xl font-bold mb-2">Gnapika</h3>
+                        <p class="text-gray-600">How we started with Gnapika and created a unique digital art platform.</p>
+                    </div>
+                    <div class="w-1/2 text-right">
+                        <h3 class="text-2xl font-bold mb-2">Rydify</h3>
+                        <p class="text-gray-600">Revolutionizing the ride-sharing experience with Rydify.</p>
+                    </div>
+                </div>
+                <!-- Add more timeline items here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-gray-100 py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Our Services</h2>
+            <div class="flex flex-wrap">
+                <div class="w-full md:w-1/3 p-4">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-2">UI/UX Design</h3>
+                        <p class="text-gray-600">Starting from $500 - $1000</p>
+                        <p class="text-gray-600">Timeline: 1 to 2 weeks</p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3 p-4">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-2">Web/Mobile App Development</h3>
+                        <p class="text-gray-600">Starting from $2000 - $4000</p>
+                        <p class="text-gray-600">Timeline: 2 to 4 weeks</p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3 p-4">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-2">Complete Project</h3>
+                        <p class="text-gray-600">Starting from $5000</p>
+                        <p class="text-gray-600">Timeline: 6 weeks</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Our Work</h2>
+            <div class="flex flex-wrap -mx-4">
+                <div class="w-full md:w-1/2 lg:w-1/3 p-4">
+                    <div class="relative">
+                        <img src="project1.jpg" alt="Gnapika" class="rounded-lg shadow-lg">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition">
+                            <p>Gnapika</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more portfolio items here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="bg-gray-100 py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Meet the Team</h2>
+            <div class="flex flex-wrap">
+                <div class="w-full md:w-1/3 p-4">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-2">Team Member Name</h3>
+                        <p class="text-gray-600">Role: UI/UX Designer</p>
+                        <p class="text-gray-600">Specializes in creating intuitive user interfaces.</p>
+                    </div>
+                </div>
+                <!-- Add more team members here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Final CTA Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-12">Let’s Build Something Amazing Together</h2>
+            <form action="#" method="POST" class="max-w-lg mx-auto">
+                <div class="mb-4">
+                    <input type="text" name="name" placeholder="Your Name" class="w-full px-4 py-2 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <input type="email" name="email" placeholder="Your Email" class="w-full px-4 py-2 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <textarea name="message" placeholder="Your Message" class="w-full px-4 py-2 border rounded-lg"></textarea>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-700 transition">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Bloomora.design. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Butterfly Animation Script -->
+    <script>
+        // Butterfly animation logic here if needed
+    </script>
+</body>
+</html>
