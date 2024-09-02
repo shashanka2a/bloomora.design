@@ -9,19 +9,24 @@
         /* Custom styles for the butterfly animation */
         .butterfly {
             position: absolute;
-            width: 50px;
-            height: 50px;
-            background-image: url('https://png.pngtree.com/png-vector/20191201/ourmid/pngtree-butterfly-vector-logo-design-png-image_2066840.jpg'); /* Add your butterfly image here */
+            width: 80px;
+            height: 80px;
+            background-image: url('butterfly.png'); /* Add your butterfly image here */
             background-size: cover;
-            animation: fly 10s infinite;
+            animation: fly 15s infinite ease-in-out;
         }
 
         @keyframes fly {
             0% { transform: translate(0, 0); }
-            25% { transform: translate(100px, -50px); }
-            50% { transform: translate(200px, 100px); }
-            75% { transform: translate(300px, -100px); }
-            100% { transform: translate(400px, 50px); }
+            25% { transform: translate(150px, -100px); }
+            50% { transform: translate(300px, 150px); }
+            75% { transform: translate(450px, -150px); }
+            100% { transform: translate(600px, 100px); }
+        }
+
+        /* Additional styling for hover effects */
+        .portfolio-item:hover .overlay {
+            opacity: 1;
         }
     </style>
 </head>
@@ -92,10 +97,10 @@
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center mb-12">Our Work</h2>
             <div class="flex flex-wrap -mx-4">
-                <div class="w-full md:w-1/2 lg:w-1/3 p-4">
+                <div class="w-full md:w-1/2 lg:w-1/3 p-4 portfolio-item">
                     <div class="relative">
                         <img src="project1.jpg" alt="Gnapika" class="rounded-lg shadow-lg">
-                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition">
+                        <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 transition">
                             <p>Gnapika</p>
                         </div>
                     </div>
@@ -112,6 +117,7 @@
             <div class="flex flex-wrap">
                 <div class="w-full md:w-1/3 p-4">
                     <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <img src="team-member.jpg" alt="Team Member Name" class="rounded-full mb-4 w-32 h-32 mx-auto">
                         <h3 class="text-2xl font-bold mb-2">Team Member Name</h3>
                         <p class="text-gray-600">Role: UI/UX Designer</p>
                         <p class="text-gray-600">Specializes in creating intuitive user interfaces.</p>
@@ -122,9 +128,52 @@
         </div>
     </section>
 
+    <!-- Pricing Calculator Section -->
+    <section id="pricing" class="bg-gray-100 py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Pricing Calculator</h2>
+            <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+                <form id="pricingForm">
+                    <!-- Number of Screens Slider -->
+                    <div class="mb-4">
+                        <label for="screensRange" class="block text-gray-700 font-bold mb-2">Number of Screens:</label>
+                        <input type="range" id="screensRange" min="10" max="50" step="10" value="10" class="w-full">
+                        <p class="text-gray-700 font-bold mt-2">Selected: <span id="screensValue">10</span> Screens</p>
+                    </div>
+
+                    <!-- Project Type -->
+                    <div class="mb-4">
+                        <label for="projectType" class="block text-gray-700 font-bold mb-2">Project Type:</label>
+                        <select id="projectType" class="w-full px-4 py-2 border rounded-lg">
+                            <option value="design">UI/UX Design</option>
+                            <option value="development">Web/Mobile App Development</option>
+                            <option value="both">Both (Design & Development)</option>
+                        </select>
+                    </div>
+
+                    <!-- Complexity Level -->
+                    <div class="mb-4">
+                        <label for="complexity" class="block text-gray-700 font-bold mb-2">Complexity Level:</label>
+                        <select id="complexity" class="w-full px-4 py-2 border rounded-lg">
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+
+                    <!-- Result -->
+                    <div class="mt-6">
+                        <p class="text-lg font-bold">Estimated Cost: <span id="estimatedCost">$0</span></p>
+                        <p class="text-lg font-bold">Estimated Timeline: <span id="estimatedTimeline">0 weeks</span></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact & Final CTA Section -->
     <section id="contact" class="py-20">
-        <div class="container mx-auto px-6 text-center">
+                <div class="container mx-auto px-6 text-center">
             <h2 class="text-4xl font-bold mb-12">Let’s Build Something Amazing Together</h2>
             <form action="#" method="POST" class="max-w-lg mx-auto">
                 <div class="mb-4">
@@ -151,6 +200,52 @@
     <!-- Butterfly Animation Script -->
     <script>
         // Butterfly animation logic here if needed
+    </script>
+
+    <!-- Pricing Calculator Script -->
+    <script>
+        // Update the number of screens displayed
+        const screensRange = document.getElementById('screensRange');
+        const screensValue = document.getElementById('screensValue');
+        screensRange.addEventListener('input', function() {
+            screensValue.textContent = screensRange.value;
+            calculatePrice();
+        });
+
+        // Calculate the pricing and timeline
+        document.getElementById('pricingForm').addEventListener('input', calculatePrice);
+
+        function calculatePrice() {
+            const screens = parseInt(screensRange.value);
+            const projectType = document.getElementById('projectType').value;
+            const complexity = document.getElementById('complexity').value;
+
+            let baseCost = 0;
+            let timeline = 0;
+
+            // Calculate base cost and timeline based on project type
+            if (projectType === 'design') {
+                baseCost = (screens / 10) * 500;
+                timeline = (screens / 10) * 1;
+            } else if (projectType === 'development') {
+                baseCost = (screens / 10) * 2000;
+                timeline = (screens / 10) * 2;
+            } else if (projectType === 'both') {
+                baseCost = ((screens / 10) * 500) + ((screens / 10) * 2000);
+                timeline = (screens / 10) * 3;
+            }
+
+            // Adjust cost based on complexity
+            if (complexity === 'medium') {
+                baseCost *= 1.2;
+            } else if (complexity === 'hard') {
+                baseCost *= 1.5;
+            }
+
+            // Display the results
+            document.getElementById('estimatedCost').textContent = `$${baseCost.toFixed(2)}`;
+            document.getElementById('estimatedTimeline').textContent = `${timeline} weeks`;
+        }
     </script>
 </body>
 </html>
