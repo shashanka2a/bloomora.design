@@ -66,7 +66,7 @@
     </section>
     Services Section -->
 
-    <!-- Portfolio Section -->
+
 <!-- Portfolio Section -->
 <section id="portfolio" class="py-20">
     <div class="container mx-auto px-6">
@@ -178,21 +178,20 @@
     </section>
     -->
 
-    <!-- Pricing Calculator Section -->
-<!-- Pricing Calculator Section -->
+
+<!-- Pricing Calculator Section 
 <section id="pricing" class="bg-gray-100 py-20">
     <div class="container mx-auto px-6">
         <h2 class="text-4xl font-bold text-center mb-12">Pricing Calculator</h2>
         <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg">
             <form id="pricingForm">
-                <!-- Number of Screens Slider -->
                 <div class="mb-6">
                     <label for="screensRange" class="block text-gray-700 font-bold mb-2">Number of Screens:</label>
                     <input type="range" id="screensRange" min="10" max="50" step="10" value="10" class="w-full">
                     <p class="text-gray-700 font-bold mt-2">Selected: <span id="screensValue">10</span> Screens</p>
                 </div>
 
-                <!-- Project Type -->
+                
                 <div class="mb-6">
                     <label for="projectType" class="block text-gray-700 font-bold mb-2">Project Type:</label>
                     <div class="relative">
@@ -207,7 +206,7 @@
                     </div>
                 </div>
 
-                <!-- Complexity Level -->
+               
                 <div class="mb-6">
                     <label for="complexity" class="block text-gray-700 font-bold mb-2">Complexity Level:</label>
                     <div class="relative">
@@ -222,12 +221,65 @@
                     </div>
                 </div>
 
-                <!-- Result -->
+               
                 <div class="mt-8 p-4 bg-gray-50 rounded-lg">
                     <p class="text-lg font-bold">Estimated Cost: <span id="estimatedCost">$0</span></p>
                     <p class="text-lg font-bold">Estimated Timeline: <span id="estimatedTimeline">0 weeks</span></p>
                 </div>
             </form>
+        </div>
+    </div>
+</section>
+    -->
+
+    <!-- Pricing Section -->
+<section id="pricing" class="bg-gray-100 py-20">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">Our Pricing</h2>
+
+        <!-- Pricing Categories (Design, Development, etc.) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Design Services Card -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Design Services</h3>
+                <ul class="list-disc list-inside text-gray-600">
+                    <li><span class="font-semibold">UI/UX Design:</span> $1,000 for 25 screens (50 hours at $20/hr)</li>
+                    <li><span class="font-semibold">Logo Designing:</span> $150 per design</li>
+                    <li><span class="font-semibold">Pitch Deck Designing:</span> $150 per design</li>
+                    <li><span class="font-semibold">Landing Page Design:</span> $150 per design</li>
+                    <li><span class="font-semibold">T-shirt Designing:</span> $150 per design</li>
+                </ul>
+            </div>
+
+            <!-- Development Services Card -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Development Services</h3>
+                <ul class="list-disc list-inside text-gray-600">
+                    <li><span class="font-semibold">Frontend Development:</span> $1,000 (50 hours at $20/hr)</li>
+                    <li><span class="font-semibold">Backend Development:</span> $1,000 (50 hours at $20/hr)</li>
+                    <li><span class="font-semibold">Full-stack Development:</span> Custom quote based on complexity</li>
+                </ul>
+            </div>
+
+            <!-- Product Management Card -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Product Management</h3>
+                <p class="text-gray-600 mb-4">Product Management includes:</p>
+                <ul class="list-disc list-inside text-gray-600">
+                    <li>Design Management</li>
+                    <li>Development Management</li>
+                    <li>Marketing Management</li>
+                </ul>
+                <p class="text-lg font-bold mt-4">Total Cost: $1,000 (30 Hours at $33/hr)</p>
+            </div>
+            
+            <!-- Digital Marketing & SEO Card -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Digital Marketing & SEO</h3>
+                <ul class="list-disc list-inside text-gray-600">
+                    <li><span class="font-semibold">50 Hours of Marketing:</span> $1,000 for 25 posts</li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
