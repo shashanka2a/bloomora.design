@@ -20,6 +20,18 @@
         .portfolio-item:hover .overlay {
             opacity: 1;
         }
+        #tooltip {
+          position: absolute;
+          left: 50%; /* Adjust based on the position of the icon */
+          top: 100%; /* Tooltip appears below the icon */
+          transform: translateX(-50%);
+          z-index: 10;
+          padding: 8px;
+          background-color: #333;
+          color: white;
+          border-radius: 4px;
+          font-size: 12px;
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800 font-sans leading-relaxed">
@@ -157,17 +169,17 @@
         <!-- Pricing Categories -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Design Services -->
-            <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="bg-white p-6 rounded-lg shadow-lg relative">
                 <h3 class="text-2xl font-bold text-gray-800 mb-4">Design Services</h3>
                 <ul class="list-none space-y-2">
                     <li class="flex items-center">
                         <span class="font-semibold">UI/UX Design:</span>
                         <span class="ml-2 text-gray-700">$1,000 for 25 screens</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block text-gray-400 cursor-pointer ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="uiux-info">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block text-gray-600 cursor-pointer ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="uiux-info">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1 0h1m-1 0v-4h1m-1 4v1m1-7h.01" />
                         </svg>
                         <!-- Tooltip for UI/UX design -->
-                        <div id="uiux-tooltip" class="hidden absolute bg-gray-700 text-white text-sm rounded px-2 py-1">
+                        <div id="uiux-tooltip" class="hidden absolute bg-gray-700 text-white text-sm rounded px-2 py-1 left-1/2 transform -translate-x-1/2 mt-8">
                             50 hours at $20/hr
                         </div>
                     </li>
@@ -179,28 +191,28 @@
             </div>
 
             <!-- Development Services -->
-            <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="bg-white p-6 rounded-lg shadow-lg relative">
                 <h3 class="text-2xl font-bold text-gray-800 mb-4">Development Services</h3>
                 <ul class="list-none space-y-2">
                     <li class="flex items-center">
                         <span class="font-semibold">Frontend Development:</span>
                         <span class="ml-2 text-gray-700">$1,000</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block text-gray-400 cursor-pointer ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="frontend-info">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block text-gray-600 cursor-pointer ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="frontend-info">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1 0h1m-1 0v-4h1m-1 4v1m1-7h.01" />
                         </svg>
                         <!-- Tooltip for Frontend Development -->
-                        <div id="frontend-tooltip" class="hidden absolute bg-gray-700 text-white text-sm rounded px-2 py-1">
+                        <div id="frontend-tooltip" class="hidden absolute bg-gray-700 text-white text-sm rounded px-2 py-1 left-1/2 transform -translate-x-1/2 mt-8">
                             50 hours at $20/hr
                         </div>
                     </li>
                     <li class="flex items-center">
                         <span class="font-semibold">Backend Development:</span>
                         <span class="ml-2 text-gray-700">$1,000</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block text-gray-400 cursor-pointer ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="backend-info">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block text-gray-600 cursor-pointer ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="backend-info">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1 0h1m-1 0v-4h1m-1 4v1m1-7h.01" />
                         </svg>
                         <!-- Tooltip for Backend Development -->
-                        <div id="backend-tooltip" class="hidden absolute bg-gray-700 text-white text-sm rounded px-2 py-1">
+                        <div id="backend-tooltip" class="hidden absolute bg-gray-700 text-white text-sm rounded px-2 py-1 left-1/2 transform -translate-x-1/2 mt-8">
                             50 hours at $20/hr
                         </div>
                     </li>
@@ -212,10 +224,10 @@
             </div>
 
             <!-- Product Management -->
-            <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="bg-white p-6 rounded-lg shadow-lg relative">
                 <h3 class="text-2xl font-bold text-gray-800 mb-4">Product Management</h3>
                 <p class="text-gray-600 mb-4">Product Management includes:
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block text-gray-400 cursor-pointer ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="product-management-info">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block text-gray-600 cursor-pointer ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="product-management-info">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1 0h1m-1 0v-4h1m-1 4v1m1-7h.01" />
                     </svg>
                 </p>
@@ -227,7 +239,7 @@
                 <p class="text-lg font-bold mt-4">Total Cost: $1,000 (30 Hours at $33/hr)</p>
 
                 <!-- Tooltip for Product Management -->
-                <div id="product-management-tooltip" class="hidden absolute bg-gray-700 text-white text-sm rounded px-2 py-1">
+                <div id="product-management-tooltip" class="hidden absolute bg-gray-700 text-white text-sm rounded px-2 py-1 left-1/2 transform -translate-x-1/2 mt-8">
                     10 Hours for Design Management <br>
                     10 Hours for Development Management <br>
                     10 Hours for Marketing Management <br>
@@ -236,20 +248,20 @@
             </div>
 
             <!-- Digital Marketing & SEO -->
-            <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="bg-white p-6 rounded-lg shadow-lg relative">
                 <h3 class="text-2xl font-bold text-gray-800 mb-4">Digital Marketing & SEO</h3>
                 <ul class="list-none space-y-2">
                     <li class="flex items-center">
                         <span class="font-semibold">50 Hours of Marketing:</span>
                         <span class="ml-2 text-gray-700">$1,000 for 25 posts</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block text-gray-400 cursor-pointer ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="marketing-info">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block text-gray-600 cursor-pointer ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="marketing-info">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1 0h1m-1 0v-4h1m-1 4v1m1-7h.01" />
                         </svg>
                     </li>
                 </ul>
 
                 <!-- Tooltip for Digital Marketing -->
-                <div id="marketing-tooltip" class="hidden absolute bg-gray-700 text-white text-sm rounded px-2 py-1">
+                <div id="marketing-tooltip" class="hidden absolute bg-gray-700 text-white text-sm rounded px-2 py-1 left-1/2 transform -translate-x-1/2 mt-8">
                     50 Hours of Social Media Content Creation <br>
                     SEO Optimization <br>
                     Paid Ads Strategy <br>
@@ -327,13 +339,14 @@
         
           infoIcon.addEventListener('mouseenter', function() {
             tooltip.classList.remove('hidden');
+            tooltip.classList.add('block');
           });
         
           infoIcon.addEventListener('mouseleave', function() {
+            tooltip.classList.remove('block');
             tooltip.classList.add('hidden');
           });
         });
-        }
     </script>
 </body>
 </html>
